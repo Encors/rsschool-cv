@@ -28,24 +28,25 @@ B1 (according to the online test at EFset Logo www.efset.org)
 
 ## Code example
 
-Popup component of one of my projects:
+**"Playing with digits" KATA from CODEWARS:** 
 
-```
-export default function InfoTooltip({ onClose, isOpen, responseInfo, classSelector }) {
-  return (
-    <Popup isOpen={isOpen} classSelector={classSelector} onClose={onClose}>
-      <div className="popup__container popup__container-info-tooltip">
-        <button className="popup__close-btn button" type="button" />
-        <img
-          src={responseInfo.status ? register_ok : not_register}
-          className="popup__image"
-          alt="Иконка статуса регистрации / авторизации"
-        />
-        <h2 className="popup__title popup__title_type_info-tooltip">
-          {responseInfo.text}
-        </h2>
-      </div>
-    </Popup>
-  );
+> Given a positive integer n written as abcd... (a, b, c, d... being digits) and a positive integer p. We want to find a positive integer k, if it exists, such that the sum of the digits of n taken to the successive powers of p is equal to k * n.
+
+```function digPow(n, p) {
+  const arr = String(n)
+    .split("")
+    .map((item) => Number(item));
+
+  let sum = 0;
+
+  arr.forEach((int) => (sum += int ** p++));
+
+  const k = Number.isInteger(sum / n);
+
+  if (k) {
+    return sum / n;
+  } else {
+    return -1;
+  }
 }
 ```
