@@ -1,1 +1,1 @@
-https://encors.github.io/rsschool-cv/
+https://encors.github.io/rsschool-cv
